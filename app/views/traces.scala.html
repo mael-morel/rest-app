@@ -1,0 +1,30 @@
+@(traces: List[models.Trace], activeSort: String)
+
+@main("Welcome to Play 2.0") {
+  <div class="row">
+    <div class="span12">
+      <h2>Available traces</h2>
+      <div id="sort">
+        <span>Sort by:</span>
+        <ul class="nav nav-pills">
+          <li @if(activeSort == "name"){class="active"}><a href="@routes.Traces.index?sort=name">name</a></li>
+          <li @if(activeSort == "-name"){class="active"}><a href="@routes.Traces.index?sort=-name">-name</a></li>
+          <li @if(activeSort == "desc"){class="active"}><a href="@routes.Traces.index?sort=desc">desc</a></li>
+          <li @if(activeSort == "-desc"){class="active"}><a href="@routes.Traces.index?sort=-desc">-desc</a></li>
+        </ul>
+      </div>
+      @if(traces.isEmpty) {
+        <p>No articles available yet.</p>
+      } else {
+      <ul>
+      @traces.map { trace =>
+        <li><a href="@routes.Traces.showEditForm(trace.id.get.stringify)">@trace.name</a> <em>by @trace.desc</em> <a href="@routes.Traces.delete(trace.id.get.stringify)" class="delete">delete</a></li>
+      }
+      </ul>
+      }
+      <div>
+        <a href="@routes.Traces.showCreationForm">Create</a>
+      </div>
+    </div>
+  </div>
+}

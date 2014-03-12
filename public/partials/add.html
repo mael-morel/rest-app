@@ -1,0 +1,22 @@
+<form class="form-horizontal" ng-model="newTrace" ng-submit="add()">
+    <fieldset>
+        <legend>Add a trace</legend>
+        <div class="control-group">
+            <label class="control-label" for="add-name">Name</label>
+
+            <div class="controls">
+                <input id="add-name" name="name" type="text" placeholder="A name" required ng-model="newTrace.name"/>
+            </div>
+        </div>
+        <div class="control-group ">
+            <label class="control-label" for="add-desc">Description</label>
+
+            <div class="controls">
+                <input id="add-desc" name="desc" type="text" placeholder="A description" ng-model="newTrace.desc"/>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-success"><i class="icon-plus icon-white"></i> Add</button>
+        </div>
+    </fieldset>
+</form>

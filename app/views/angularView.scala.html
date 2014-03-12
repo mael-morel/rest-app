@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="traces">
+<head>
+    <meta charset="utf-8">
+    <title>Traces demo app</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/stylesheets/main.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#/">caco[miniBookMark]</a>
+            <a href="#/add/" class="btn btn-success pull-right"><i class="icon-plus icon-white"></i> Add</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span12" ng-view ng-animate="{enter: 'fade-enter'}">
+        </div>
+    </div>
+</div>
+
+<script src="assets/javascripts/angular.js"></script>
+<script src="assets/javascripts/angular-resource.js"></script>
+<script src="assets/javascripts/angular-route.js"></script>
+<script src="assets/javascripts/app.js" ></script>
+<script src="assets/javascripts/controller/traceCtrl.js" ></script>
+<script src="assets/javascripts/service/traceService.js" ></script>
+</body>
+</html>

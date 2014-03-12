@@ -13,5 +13,23 @@ POST    /articles/:id/attachments   controllers.Articles.saveAttachment(id)
 GET     /attachments/:id            controllers.Articles.getAttachment(id)
 DELETE  /attachments/:id            controllers.Articles.removeAttachment(id)
 
+GET     /traces                     controllers.Traces.index
+GET     /traces/new                 controllers.Traces.showCreationForm
+POST    /traces/new                 controllers.Traces.create
+GET     /traces/:id                 controllers.Traces.showEditForm(id)
+POST    /traces/:id                 controllers.Traces.edit(id)
+DELETE  /traces/:id                 controllers.Traces.delete(id)
+POST    /traces/:id/attachments     controllers.Traces.saveAttachment(id)
+GET     /traces/attachments/:id     controllers.Traces.getAttachment(id)
+DELETE  /traces/attachments/:id     controllers.Traces.removeAttachment(id)
+
+# services REST
+GET     /iti                        controllers.Traces.list
+GET     /iti/:id                    controllers.Traces.showEditForm(id)
+POST    /iti                        controllers.Traces.create
+DELETE  /iti/:id	                controllers.Traces.delete(id)
+PUT  	/iti/:id	                controllers.Traces.update(id)
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

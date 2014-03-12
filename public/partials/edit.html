@@ -1,0 +1,24 @@
+<form class="form-horizontal" ng-submit="save(trace)">
+    <input type="hidden" ng-model="trace.id.$oid"/>
+    <fieldset>
+        <legend>Edit a trace</legend>
+        <div class="control-group">
+            <label class="control-label" for="edit-name">Name</label>
+
+            <div class="controls">
+                <input name="name" id="edit-name" type="text" placeholder="A name" ng-model="trace.name"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="edit-desc">Description</label>
+
+            <div class="controls">
+                <input name="desc" id="edit-desc" type="desc" placeholder="description of your trace" ng-model="trace.desc"
+                       required/>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-warning"><i class="icon-edit icon-white"></i> Edit</button>
+        </div>
+    </fieldset>
+</form>
